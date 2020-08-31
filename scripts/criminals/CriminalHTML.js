@@ -1,11 +1,13 @@
 export const CriminalHTML = (criminalObj) => {
+    const startDate = new Date(criminalObj.incarceration.start).toLocaleDateString('en-US');
+    const endDate = new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')
     return `
     <section id="criminal-${criminalObj.id}>
         <h2>${criminalObj.name}</h2>
         <p>Age: ${criminalObj.age}</p>
-        <p>Crime: ${criminalObj.incarceration} </p>
-        <p>Term start: ${criminalObj.incarceration.start}</p>
-        <p>Term end: ${criminalObj.incarceration.end}</p>
+        <p>Crime: ${criminalObj.conviction} </p>
+        <p>Term start: ${startDate}</p>
+        <p>Term end: ${endDate}</p>
     </section>
     `
 }

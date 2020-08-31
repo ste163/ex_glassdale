@@ -1,0 +1,33 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 5px 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.criminalsContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.criminal-card {
+    border: dotted lightgray;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    flex-basis: 20rem;
+}
+
+.officersContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.officer-card {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    flex-basis: 20rem;
+    background-color: #d3ecff;
+}

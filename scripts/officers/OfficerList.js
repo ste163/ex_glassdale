@@ -17,9 +17,7 @@ export const ListOfficers = () => {
 const addOfficersToDOM = (officerArr) => {
     const domElement = document.querySelector(".officersContainer");
     //could do either map or forEach
-    let HTMLArray = officerArr.map(officer => {
-        return OfficerHTML(officer);
-    })
+    let HTMLArray = officerArr.map(officer => OfficerHTML(officer))
     
     domElement.innerHTML = HTMLArray.join("");
 }

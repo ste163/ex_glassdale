@@ -1,8 +1,6 @@
 let officers = []
 
-export const useOfficers = () => {
-    return officers.slice()
-}
+export const useOfficers = () => officers.slice();
 
 export const getOfficers = () => {
     // Fetch accepts a URL.
@@ -13,9 +11,5 @@ export const getOfficers = () => {
         .then(response => response.json())
         //convertedResponse, is just the returned value of the converted response.
         //It could be named anything
-        .then(convertedResponse => {
-                console.table(convertedResponse)
-                officers = convertedResponse
-            }
-        )
+        .then(convertedResponse => officers = convertedResponse)
 }

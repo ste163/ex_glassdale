@@ -1,7 +1,17 @@
 let convictions = [];
 
 export const useConvictions = () => {
-    return convictions.slice();
+    convictions.slice()
+    return convictions.sort((a, b) => {
+        let nameA = a.name.toUpperCase();
+        let nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        } else if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
 }
 
 export const getConvictions = () => {

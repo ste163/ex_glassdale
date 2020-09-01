@@ -1,17 +1,16 @@
 import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
 export const ConvictionSelect = () => {
-    const domTarget = document.querySelector(".filters__crime");
     getConvictions()
-    .then(() => {
-        const convictionArray = useConvictions();
-        const rendered = convictionRenderer(convictionArray);
-        domTarget.innerHTML = rendered;
-    })
+        .then(() => {
+            const convictionArray = useConvictions();
+            convictionRenderer(convictionArray);
+        })
 }
 
 const convictionRenderer = (convictionArr) => {
-    return `
+    const domTarget = document.querySelector(".filters__crime");
+    return domTarget.innerHTML = `
     <select class="dropdown" id="crimeSelect">
     <option value="0">Please select a crime...</option>
     ${
@@ -20,7 +19,7 @@ const convictionRenderer = (convictionArr) => {
             <option>${conviction.name}</option>
             `
         }).join("")
-    }
-</select>
+        }
+    </select>
     `
 }

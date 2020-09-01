@@ -2,7 +2,17 @@ import { getOfficers, useOfficers } from './OfficerProvider.js'
 
 const eventHub = document.querySelector(".container");
 
-
+eventHub.addEventListener("change", e => {
+    if (e.target.id === "officerSelect") {
+        const selectedOfficer = e.target.value;
+        const customEvent = new CustomEvent("officerSelected", {
+            detail: {
+                officer: selectedOfficer
+            }
+        })
+        eventHub.dispatchEvent(customEvent);
+    }
+})
 
 export const OfficerSelect = () => {
     getOfficers()

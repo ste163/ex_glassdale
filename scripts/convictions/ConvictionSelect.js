@@ -4,9 +4,10 @@ const eventHub = document.querySelector(".container");
 
 eventHub.addEventListener("change", e => {
     if (e.target.id === "crimeSelect") {
+        const selectedCrime = e.target.value
         const customEvent = new CustomEvent("crimeChosen", {
             detail: {
-                chosenCrime: e.target.value
+                chosenCrime: selectedCrime
             }
         })
         eventHub.dispatchEvent(customEvent);

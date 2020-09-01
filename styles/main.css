@@ -8,6 +8,16 @@ h2 {
     font-size: 1.2rem;
 }
 
+.filters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.filter {
+    margin: 0 10px 0 10px;
+}
+
 .criminalsContainer {
     display: flex;
     flex-flow: row wrap;

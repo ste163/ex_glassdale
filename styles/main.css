@@ -21,6 +21,12 @@ h4 {
     margin: 5px 0 5px 0;
 }
 
+textarea {
+    height: auto;
+    overflow: vertical;
+    resize: none;
+}
+
 .sectionHeading {
     color: #f1f1f1;
     background-color: #292929;
@@ -45,9 +51,41 @@ h4 {
     margin: 5px 5px 5px 5px;
 }
 
+.noteFormContainer {
+    display: flex;
+    flex-flow: column wrap;
+    float: inline-end;
+    width: max-content;
+    padding: 0 5px 5px 5px;
+    background-color: var(--cardColor);
+    justify-self: end;
+    grid-column-start: 3;
+    grid-row: 2 / span 2;
+}
+
+.note-label {
+    margin-top: 5px;
+}
+
+.criminals {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.crimh2 {
+    grid-column: 1 / span 3;
+}
+
+.criminalSelectH3 {
+    margin-left: 5px;
+    grid-row-start: 2;
+    grid-column: 1 / span 2;
+}
+
 .criminalsContainer {
     display: flex;
     flex-flow: row wrap;
+    grid-column: 1 / span 2;
 }
 
 .criminal-card {

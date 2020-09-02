@@ -1,21 +1,48 @@
+:root {
+    --cardColor: #f1f1f1;
+}
+
 p {
     margin: 0;
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
 h2 {
     margin: 5px 0 5px 0;
-    font-size: 1.2rem;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+}
+
+h4 {
+    margin: 5px 0 5px 0;
+}
+
+.sectionHeading {
+    color: #f1f1f1;
+    background-color: #292929;
+    padding: 10px 0 10px 5px;
+
+}
+
+.filterHeading {
+    color: #f1f1f1;
+    background-color: #292929;
+    padding: 5px 0 5px 5px;
+    margin-top: 0;
 }
 
 .filters {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column;
+    background-color: var(--cardColor);
 }
 
 .filter {
-    margin: 0 10px 0 10px;
+    margin: 5px 5px 5px 5px;
 }
 
 .criminalsContainer {
@@ -24,10 +51,10 @@ h2 {
 }
 
 .criminal-card {
-    border: dotted lightgray;
     margin: 0.5rem;
     padding: 0.5rem;
     flex-basis: 20vw;
+    background-color: var(--cardColor);
 }
 
 .officersContainer {
@@ -39,5 +66,5 @@ h2 {
     margin: 0.5rem;
     padding: 0.5rem;
     flex-basis: 20vw;
-    background-color: #d3ecff;
+    background-color: var(--cardColor);
 }

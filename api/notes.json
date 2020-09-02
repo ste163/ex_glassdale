@@ -1,0 +1,12 @@
+{
+    "notes": [
+        {
+            "id": 0,
+            "enterDate": "09/02/2020",
+            "enteringOfficer": "DROPDOWN FOR OFFICERS",
+            "currentSuspect": "DROPDOWN/SEARCH FOR SUSPECT",
+            "textTitle": "TITLE TEXT",
+            "textBody": "BODY TEXT"
+        }
+    ]
+}

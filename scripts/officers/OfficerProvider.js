@@ -1,6 +1,18 @@
 let officers = []
 
-export const useOfficers = () => officers.slice();
+export const useOfficers = () => {
+    officers.slice()
+    return officers.sort((a, b) => {
+        let nameA = a.name.toUpperCase();
+        let nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        } else if (nameA > nameB) {
+            return 1;
+        }
+        return 0;   
+    })
+}
 
 export const getOfficers = () => {
     // Fetch accepts a URL.

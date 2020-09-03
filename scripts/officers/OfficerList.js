@@ -10,14 +10,12 @@ export const ListOfficers = () => {
     getOfficers()
     .then(() => {
         const officerArray = useOfficers();
-        addOfficersToDOM(officerArray);
+        renderOfficers(officerArray);
     })
 };
 
-const addOfficersToDOM = (officerArr) => {
-    const domElement = document.querySelector(".officersContainer");
-    //could do either map or forEach
+const renderOfficers = (officerArr) => {
+    const domElement = document.querySelector(".card__officer-container");
     let HTMLArray = officerArr.map(officer => OfficerHTML(officer))
-    
     domElement.innerHTML = HTMLArray.join("");
 }

@@ -1,12 +1,15 @@
 :root {
     --cardColor: #f1f1f1;
     --headingBackgroundColor: #292929;
+    --headingCriminalColor: #476048;
 
+    --textColorOnBackground: #f1f1f1;
     --textColor: rgb(40, 40, 40);
 }
 
 body {
     color: var(--textColor);
+    margin: 0 60px;
 }
 
 p {
@@ -35,14 +38,34 @@ textarea {
 }
 
 .section__h2 {
-    color: #f1f1f1;
+    color: var(--textColorOnBackground);
     background-color: var(--headingBackgroundColor);
     padding: 10px 0 10px 5px;
+}
 
+.section__h3 {
+    background-color: var(--headingCriminalColor);
+    color: var(--textColorOnBackground);
+    padding: 5px 0 5px 5px;
+}
+
+.card {
+    margin: 0.6rem;
+    padding: 0.8rem;
+    flex: 1 1 auto;
+    background-color: var(--cardColor);
+    height: min-content;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px #ded6d6;
+    transition: all .2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .filter__heading {
-    color: #f1f1f1;
+    color: var(--textColorOnBackground);
     background-color: var(--headingBackgroundColor);
     padding: 5px 0 5px 5px;
     margin-top: 0;
@@ -63,8 +86,8 @@ textarea {
     grid-auto-flow: row;
 }
 
-.section__h3 {
-    grid-row: 3;
+.h3__criminal-notes {
+    grid-row: 4;
     grid-column: 1 / span 2;
 }
 
@@ -72,7 +95,7 @@ textarea {
     display: flex;
     flex-flow: column wrap;
     grid-column-start: 1;
-    grid-row: 4;
+    grid-row: 5;
     width: max-content;
     height: max-content;
     padding: 0 15px 15px 15px;
@@ -94,52 +117,29 @@ textarea {
     display: flex;
     flex-flow: row wrap;
     grid-column: 1 / span 2;
-    grid-row: 5;
+    grid-row: 6;
     height: min-content;
-}
-
-.card__note {
-    background-color: yellow;
-    margin: 10px;
 }
 
 .criminals__h2 {
     grid-column: 1 / span 2;
 }
 
-.criminals__h3--select {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 3px;
+.h3__selected-criminals {
     grid-row-start: 2;
     grid-column: 1 / span 2;
 }
 
-.card {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    flex: 1 1 auto;
-    background-color: var(--cardColor);
-    height: min-content;
-}
 
 .card__criminal-container {
     display: flex;
     flex-flow: row wrap;
     grid-column: 1 / span 2;
-    grid-row: 2 / span 1;
-    margin-top: 50px;
-}
-
-.card__criminal {
-
+    grid-row: 3 / span 1;
+    margin-top: 10px;
 }
 
 .card__officer-container {
     display: flex;
     flex-flow: row wrap;
-}
-
-.card__officer {
-
 }

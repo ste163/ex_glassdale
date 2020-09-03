@@ -7,18 +7,15 @@ const eventHub = document.querySelector(".container__main");
 
 //We will be listening for the noteStateChanged event. Once that
 //once that happens, we update our notes.
-eventHub.addEventListener("noteStateChanged", e => {
-    console.log("HEARD NOTE STATE CHANGED")
+eventHub.addEventListener("noteStateChanged", () => {
     const notesArray = useNotes();
     renderNotes(notesArray);
 })
 
 export const ListNotes = () => {
     getNotes()
-    .then(() => {
-        const notesArray = useNotes();
-        renderNotes(notesArray);
-    })
+    .then(useNotes)
+    .then(renderNotes)
 }
 
 const renderNotes = (notesArr) => {

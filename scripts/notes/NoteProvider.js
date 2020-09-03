@@ -13,6 +13,8 @@ const dispatchNoteStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent);
 }
 
+export const useNotes = () => notesArray.slice();
+
 export const getNotes = () => {
     return fetch("http://localhost:8088/notes")
     .then(response => response.json())
@@ -37,5 +39,3 @@ export const saveNote = noteObj => {
     .then(getNotes)
     .then(dispatchNoteStateChangeEvent)
 }
-
-export const useNotes = () => notesArray.slice();

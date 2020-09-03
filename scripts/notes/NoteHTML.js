@@ -5,7 +5,7 @@
 
 export const NoteHTML = (noteObj) => {
     return `
-    <section class="note__card">
+    <section class="card card__note">
         <h3>${noteObj.textTitle}</h3>
         <p>Date entered: ${noteObj.date}</p>
         <p>Created by Officer: ${noteObj.enteringOfficer}</p>

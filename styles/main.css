@@ -63,11 +63,16 @@ textarea {
     grid-auto-flow: row;
 }
 
+.section__h3 {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+}
+
 .note__container--form {
     display: flex;
     flex-flow: column wrap;
-    grid-column-start: 3;
-    grid-row: 2 / span 2;
+    grid-column-start: 1;
+    grid-row: 4;
     width: max-content;
     height: max-content;
     padding: 0 15px 15px 15px;
@@ -86,21 +91,20 @@ textarea {
 }
 
 .note__container--cards {
-    grid-column-start: 3;
-    grid-row: 2 / span 2;
-    margin-top: 300px;
-    width: min-content;
+    display: flex;
+    flex-flow: row wrap;
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    height: min-content;
 }
 
-.note__card {
+.card__note {
     background-color: yellow;
     margin: 10px;
 }
 
-
-
 .criminals__h2 {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 }
 
 .criminals__h3--select {
@@ -114,14 +118,17 @@ textarea {
 .card {
     margin: 0.5rem;
     padding: 0.5rem;
-    flex: 1 auto;
+    flex: 1 1 auto;
     background-color: var(--cardColor);
+    height: min-content;
 }
 
 .card__criminal-container {
     display: flex;
     flex-flow: row wrap;
     grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    margin-top: 50px;
 }
 
 .card__criminal {

@@ -1,12 +1,20 @@
 {
-    "notes": [
-        {
-            "id": 0,
-            "enterDate": "09/02/2020",
-            "enteringOfficer": "DROPDOWN FOR OFFICERS",
-            "currentSuspect": "DROPDOWN/SEARCH FOR SUSPECT",
-            "textTitle": "TITLE TEXT",
-            "textBody": "BODY TEXT"
-        }
-    ]
+  "notes": [
+    {
+      "id": 0,
+      "enterDate": "09/02/2020",
+      "enteringOfficer": "DROPDOWN FOR OFFICERS",
+      "currentSuspect": "DROPDOWN/SEARCH FOR SUSPECT",
+      "textTitle": "TITLE TEXT",
+      "textBody": "BODY TEXT"
+    },
+    {
+      "enterDate": "09/02/2020",
+      "enteringOfficer": "OFFICER BOB",
+      "currentSuspect": "DROPDOWN/SEARCH FOR SUSPECT",
+      "textTitle": "TITLE BAD BOYS",
+      "textBody": "BODY TEXT",
+      "id": 1
+    }
+  ]
 }

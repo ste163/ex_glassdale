@@ -54,13 +54,14 @@ textarea {
 .noteFormContainer {
     display: flex;
     flex-flow: column wrap;
-    float: inline-end;
-    width: max-content;
-    padding: 0 5px 5px 5px;
-    background-color: var(--cardColor);
-    justify-self: end;
     grid-column-start: 3;
     grid-row: 2 / span 2;
+    width: max-content;
+    height: max-content;
+    padding: 0 15px 15px 15px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px rgb(221, 221, 221);
 }
 
 .note-label {
@@ -91,7 +92,7 @@ textarea {
 .criminal-card {
     margin: 0.5rem;
     padding: 0.5rem;
-    flex-basis: 20vw;
+    flex: 1 auto;
     background-color: var(--cardColor);
 }
 

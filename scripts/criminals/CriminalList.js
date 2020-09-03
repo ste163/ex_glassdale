@@ -1,14 +1,13 @@
 import { CriminalHTML } from "./CriminalHTML.js"
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 
-const eventHub = document.querySelector(".container");
+const eventHub = document.querySelector(".container__main");
 
 
 eventHub.addEventListener("crimeChosen", e => {
     if ("chosenCrime" in e.detail) {
         const criminalArray = useCriminals();
         const filteredArray = criminalArray.filter(each => {
-            console.log(each);
             return each.conviction === e.detail.chosenCrime;
         })
         
@@ -36,7 +35,7 @@ export const ListCriminals = () => {
 }
 
 const renderCriminals = (criminalsArr) => {
-    const domElement = document.querySelector(".criminalsContainer");
+    const domElement = document.querySelector(".card__criminal-container");
     let HTMLArray = criminalsArr.map(criminal => CriminalHTML(criminal));
     domElement.innerHTML = HTMLArray.join("");
 }

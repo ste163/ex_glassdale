@@ -15,7 +15,7 @@ export const ListOfficers = () => {
 };
 
 const renderOfficers = (officerArr) => {
-    const domElement = document.querySelector(".officersContainer");
+    const domElement = document.querySelector(".card__officer-container");
     let HTMLArray = officerArr.map(officer => OfficerHTML(officer))
     domElement.innerHTML = HTMLArray.join("");
 }

@@ -1,8 +1,8 @@
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 import { saveNote } from "./NoteProvider.js"
 
-const eventHub = document.querySelector(".criminals")
-const contentTarget = document.querySelector(".noteFormContainer")
+const eventHub = document.querySelector(".container__criminals")
+const contentTarget = document.querySelector(".note__container--form")
 
 eventHub.addEventListener("click", e => {
     if (e.target.id === "note-save") {

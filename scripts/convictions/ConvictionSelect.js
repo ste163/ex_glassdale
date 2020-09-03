@@ -1,6 +1,6 @@
 import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
-const eventHub = document.querySelector(".container");
+const eventHub = document.querySelector(".container__main");
 
 eventHub.addEventListener("change", e => {
     if (e.target.id === "crimeSelect") {

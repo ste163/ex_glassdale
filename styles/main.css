@@ -27,14 +27,14 @@ textarea {
     resize: none;
 }
 
-.sectionHeading {
+.section__h2 {
     color: #f1f1f1;
     background-color: #292929;
     padding: 10px 0 10px 5px;
 
 }
 
-.filterHeading {
+.filter__heading {
     color: #f1f1f1;
     background-color: #292929;
     padding: 5px 0 5px 5px;
@@ -51,7 +51,7 @@ textarea {
     margin: 5px 5px 5px 5px;
 }
 
-.noteFormContainer {
+.note__container--form {
     display: flex;
     flex-flow: column wrap;
     grid-column-start: 3;
@@ -68,42 +68,43 @@ textarea {
     margin-top: 5px;
 }
 
-.criminals {
+.container__criminals {
     display: grid;
     grid-auto-flow: row;
 }
 
-.crimh2 {
+.criminals__h2 {
     grid-column: 1 / span 3;
 }
 
-.criminalSelectH3 {
+.criminals__h3--select {
     margin-left: 5px;
     grid-row-start: 2;
     grid-column: 1 / span 2;
 }
 
-.criminalsContainer {
-    display: flex;
-    flex-flow: row wrap;
-    grid-column: 1 / span 2;
-}
-
-.criminal-card {
+.card {
     margin: 0.5rem;
     padding: 0.5rem;
     flex: 1 auto;
     background-color: var(--cardColor);
 }
 
-.officersContainer {
+.card__criminal-container {
+    display: flex;
+    flex-flow: row wrap;
+    grid-column: 1 / span 2;
+}
+
+.card__criminal {
+
+}
+
+.card__officer-container {
     display: flex;
     flex-flow: row wrap;
 }
 
-.officer-card {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    flex-basis: 20vw;
-    background-color: var(--cardColor);
+.card__officer {
+
 }

@@ -1,5 +1,6 @@
 :root {
     --cardColor: #f1f1f1;
+    --cardShadow: #ebebeb;
     --headingBackgroundColor: #292929;
     --headingCriminalColor: #476048;
 
@@ -56,12 +57,13 @@ textarea {
     background-color: var(--cardColor);
     height: min-content;
     border-radius: 20px;
-    box-shadow: 0px 2px 10px #ded6d6;
+    box-shadow: 0px 2px 10px var(--cardShadow);
     transition: all .2s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.1);
+    box-shadow: 0px 0px 5px var(--cardShadow);
 }
 
 .filter__heading {

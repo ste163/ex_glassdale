@@ -8,10 +8,7 @@ export const createUiAccordion = () => {
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
             } else {
-                // The 999 is to increase the scroll height. Otherwise, the nested menus wont work
-                // This breaks the animations though. I should probably not allow for Criminals to be 
-                // collapsable. There isn't any reason for it, really.
-                panel.style.maxHeight = (panel.scrollHeight * 999) + "px";
+                panel.style.maxHeight = (panel.scrollHeight) + "px";
             }
         })
     }

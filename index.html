@@ -20,16 +20,20 @@
             </div>
         </header>
         <section class="container__criminals">
-            <h2 class="section__h2 criminals__h2">Criminals</h2>
-            <h3 class="section__h3 h3__selected-criminals">Selected Criminals</h3>
-            <article class="card__criminal-container"></article>
-            <h2 class="section__h3 h3__criminal-notes">Criminal Notes</h2>
-            <article class="note__container--form"></article>
-            <article class="note__container--cards"></article>
+            <h2 class="ui-accordion__btn section__h2 criminals__h2">Criminals</h2>
+            <div class="ui-accordion__section">
+                <h3 class="ui-accordion__btn section__h3 h3__selected-criminals">Selected Criminals</h3>
+                <article class="ui-accordion__section card__criminal-container"></article>
+                <h3 class="ui-accordion__btn section__h3 h3__criminal-notes">Criminal Notes</h3>
+                <div class="ui-accordion__section">
+                    <article class="note__container--form"></article>
+                    <article class="note__container--cards"></article>
+                </div>
+            </div>
         </section>
         <section class="officers">
-            <h2 class="section__h2 officers__h2">Officers</h2>
-            <article class="card__officer-container"></article>
+            <h2 class="ui-accordion__btn section__h2 officers__h2">Officers</h2>
+            <article class="ui-accordion__section card__officer-container"></article>
         </section>
     </main>
 

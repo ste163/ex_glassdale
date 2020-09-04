@@ -32,12 +32,6 @@ h4 {
     margin: 5px 0 5px 0;
 }
 
-textarea {
-    height: auto;
-    overflow: vertical;
-    resize: none;
-}
-
 .section__h2 {
     color: var(--textColorOnBackground);
     background-color: var(--headingBackgroundColor);
@@ -49,6 +43,41 @@ textarea {
     color: var(--textColorOnBackground);
     padding: 5px 0 5px 5px;
 }
+
+textarea {
+    height: auto;
+    overflow: vertical;
+    resize: none;
+}
+
+/****************** UI ******************/
+
+.ui-accordion__btn {
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.ui-accordion__active, .ui-accordion__btn:hover {
+    background-color: #4b4b4b;
+}
+
+.ui-accordion__btn:after {
+    content: "\002B";
+}
+
+.ui-accordion__active:after {
+    content: "\2212";
+}
+
+.ui-accordion__section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s linear;
+}
+
+/**************** END UI ****************/
+
+
 
 .card {
     margin: 0.6rem;
@@ -62,7 +91,7 @@ textarea {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0px 0px 5px var(--cardShadow);
 }
 
@@ -84,8 +113,7 @@ textarea {
 }
 
 .container__criminals {
-    display: grid;
-    grid-auto-flow: row;
+
 }
 
 .h3__criminal-notes {
@@ -131,7 +159,6 @@ textarea {
     grid-row-start: 2;
     grid-column: 1 / span 2;
 }
-
 
 .card__criminal-container {
     display: flex;

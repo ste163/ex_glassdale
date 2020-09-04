@@ -5,6 +5,7 @@ import { OfficerSelect } from "./officers/OfficerSelect.js"
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
 import { NoteForm } from "./notes/NoteForm.js"
 import { ListNotes } from "./notes/NoteList.js";
+import { createUiAccordion } from "./ui/AccordionMenu.js"
 
 ListOfficers();
 ListCriminals();
@@ -12,3 +13,4 @@ ConvictionSelect();
 OfficerSelect();
 NoteForm();
 ListNotes();
+createUiAccordion();

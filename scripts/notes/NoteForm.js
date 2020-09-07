@@ -2,7 +2,7 @@ import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 import { saveNote } from "./NoteProvider.js"
 
 const eventHub = document.querySelector(".container__criminals")
-const contentTarget = document.querySelector(".note__container--form")
+const contentTarget = document.querySelector(".note__form")
 
 eventHub.addEventListener("click", e => {
     if (e.target.id === "note-save") {
@@ -37,24 +37,26 @@ export const NoteForm = () => {
 //WE DON"T HAVE TO PUT A DATE FIELD. The save button handles that.
 const renderNoteForm = (criminalArr) => {
     contentTarget.innerHTML += `
-    <section class="note__form">
-        <h3>Enter a Criminal Note</h3>
-        <label class="note-label" for="note-text-title">Title</label>
-        <input type="text" id="note-text-title" placeholder="Enter title here.">
-        <label class="note-label" for="note-text-body">Note</label>
-        <textarea rows="4" id="note-text-body" placeholder="Enter note here."></textarea>
-        <label class="note-label" id="noteForm--suspect">Known criminals</label>
-        <select class="dropdown" id="noteForm--suspect">
-            <option value="0">Please select a suspect...</option>
-            ${
-                criminalArr.map(criminal => {
-                    return `
-                    <option value="${criminal.name}">${criminal.name}</option>
-                    `
-                }).join("")
-                }
-        </select>
-        <button id="note-save">Save Note</button>
-    </section>
+        <header class="form__header">
+            <h4>Enter a Criminal Note</h4>
+        </header>
+        <form class="form__body">
+            <label class="note-label" for="note-text-title">Title</label>
+            <input type="text" id="note-text-title" placeholder="Enter title here.">
+            <label class="note-label" for="note-text-body">Note</label>
+            <textarea rows="4" id="note-text-body" placeholder="Enter note here."></textarea>
+            <label class="note-label" id="noteForm--suspect">Known criminals</label>
+            <select class="dropdown" id="noteForm--suspect">
+                <option value="0">Please select a suspect...</option>
+                ${
+                    criminalArr.map(criminal => {
+                        return `
+                        <option value="${criminal.name}">${criminal.name}</option>
+                        `
+                    }).join("")
+                    }
+            </select>
+            <button id="note-save">Save Note</button>
+        </form>
     `
 }

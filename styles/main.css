@@ -44,6 +44,12 @@ h5 {
     font-size: 1em;
 }
 
+h6 {
+    font-size: 1em;
+    margin: 3px 0 3px;
+    font-size: 1em;
+}
+
 .section__h2 {
     color: var(--textColorOnBackground);
     background-color: var(--headingBackgroundColor);

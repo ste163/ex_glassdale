@@ -10,7 +10,7 @@ eventHub.addEventListener("associatesClicked", e => {
 
     const alibiTarget = document.querySelector(`.alibiDialogue--${targetCriminal.id}`);
 
-    const alibiHeadingTarget = document.querySelector("h6")
+    const alibiHeadingTarget = alibiTarget.querySelector("h6")
 
     if (alibiTarget.contains(alibiHeadingTarget)) {
         alibiTarget.innerHTML = ""        

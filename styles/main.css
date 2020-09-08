@@ -190,9 +190,8 @@ textarea {
 .card__criminal-container {
     display: flex;
     flex-flow: row wrap;
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 1;
     margin-top: 10px;
+    margin-left: 15px;
 }
 
 .associates__btn {

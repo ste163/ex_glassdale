@@ -11,7 +11,7 @@ eventHub.addEventListener("associatesClicked", e => {
     const alibiTarget = document.querySelector(`.alibiDialogue--${targetCriminal.id}`);
 
     const alibiHeadingTarget = document.querySelector("h6")
-    
+
     if (alibiTarget.contains(alibiHeadingTarget)) {
         alibiTarget.innerHTML = ""        
     } else {
@@ -30,6 +30,6 @@ eventHub.addEventListener("associatesClicked", e => {
 //we can place the alibi ANYWHERE
 export const AlibiDialogueHTML = (criminalId) => {
     return `
-    <span class="alibiDialogue--${criminalId}"></span>
+    <article class="alibi__article alibiDialogue--${criminalId}"></article>
     `
 }

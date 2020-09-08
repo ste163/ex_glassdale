@@ -27,7 +27,7 @@ export const CriminalHTML = (criminalObj) => {
         <p>Crime: ${criminalObj.conviction} </p>
         <p>Term start: ${startDate}</p>
         <p>Term end: ${endDate}</p>
-        <button id="associates--${criminalObj.id}">Associate Alibis</button>
+        <button class="associates__btn" id="associates--${criminalObj.id}">Associate Alibis</button>
         ${AlibiDialogueHTML(criminalObj.id)}
     </section>
     `

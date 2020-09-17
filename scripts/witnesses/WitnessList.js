@@ -1,9 +1,6 @@
 import { getWitnesses, useWitnesses } from "./WitnessProvider.js"
 import { WitnessHTML } from "./WitnessHTML.js"
 
-
-const eventHub = document.querySelector(".container__main");
-
 export const ListWitnesses = () => {
     getWitnesses()
     .then(() => {

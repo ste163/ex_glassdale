@@ -15,8 +15,7 @@ eventHub.addEventListener("click", e => {
         //Create what the database is expecting.
         const newNote = {
             date: Date.now(),
-            enteringOfficer: "NOT YET ADDED",
-            currentSuspect: noteSuspect.value,
+            suspectId: parseInt(noteSuspect.value),
             textTitle: noteTitle.value,
             textBody: noteText.value
         }
@@ -45,13 +44,13 @@ const renderNoteForm = (criminalArr) => {
             <input type="text" id="note-text-title" placeholder="Enter title here.">
             <label class="note-label" for="note-text-body">Note</label>
             <textarea rows="4" id="note-text-body" placeholder="Enter note here."></textarea>
-            <label class="note-label" id="noteForm--suspect">Known criminals</label>
+            <label class="note-label" for="noteForm--suspect">Known criminals</label>
             <select class="dropdown" id="noteForm--suspect">
                 <option value="0">Please select a suspect...</option>
                 ${
                     criminalArr.map(criminal => {
                         return `
-                        <option value="${criminal.name}">${criminal.name}</option>
+                            <option value="${criminal.id}">${criminal.name}</option>
                         `
                     }).join("")
                     }

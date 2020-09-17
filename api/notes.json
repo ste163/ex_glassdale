@@ -1,12 +1,11 @@
 {
   "notes": [
     {
-      "id": 1,
-      "date": "TEST DATE",
-      "enteringOfficer": "DROPDOWN FOR OFFICERS",
-      "currentSuspect": "DROPDOWN/SEARCH FOR SUSPECT",
-      "textTitle": "TITLE TEXT",
-      "textBody": "BODY TEXT"
+      "date": 1600365727540,
+      "suspectId": 13,
+      "textTitle": "What??",
+      "textBody": "Huh?",
+      "id": 1
     }
   ]
 }

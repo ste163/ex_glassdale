@@ -10,8 +10,7 @@ export const NoteHTML = (noteObj) => {
     <section class="card card__note">
         <h3>${noteObj.textTitle}</h3>
         <p>Date entered: ${new Date(noteObj.date).toLocaleDateString('en-US')}</p>
-        <p>Created by Officer: ${noteObj.enteringOfficer}</p>
-        <p>Suspected criminal: ${noteObj.currentSuspect}</p>
+        <p>Suspected criminal: ${noteObj.suspectObj.name}</p>
         <p>${noteObj.textBody}</p>
     </section>
     `

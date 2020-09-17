@@ -14,7 +14,7 @@ eventHub.addEventListener("noteStateChanged", () => {
 //Initially getting all saved notes and displaying them on page.
 export const ListNotes = () => {
     getNotes()
-    .then(getCriminals())
+    .then(getCriminals)
     .then(() => {
         const notes = useNotes();
         const suspects = useCriminals()
@@ -26,7 +26,6 @@ export const ListNotes = () => {
     //in Notes array, then store the matched suspect object as a new property in the note.
 const renderNotes = (notesArr, suspectsArr) => {
     const domElement = document.querySelector(".note__container--cards")
-
     let HTMLArray = notesArr.map(note => {
         //we are declaring a new property on the note object that is suspectObj.
         note.suspectObj = suspectsArr.find(suspect => {

@@ -25,15 +25,16 @@ export const OfficerSelect = () => {
 const renderOfficers = (officersArr) => {
     const domTarget = document.querySelector(".filters__incarceration");
     return domTarget.innerHTML = `
-    <label for "officerSelect">Show criminal by convicting officer: <label>
+    <label for "officerSelect">Show criminal by convicting officer: </label>
     <select class="dropdown" id="officerSelect">
-    <option value="0">Please select an officer...</option>
-    ${
-        officersArr.map(officer => {
-            return `
-            <option>${officer.name}</option>
-            `
-        })
-    }
+        <option value="0">Please select an officer...</option>
+        ${
+            officersArr.map(officer => {
+                return `
+                <option value="${officer.id}">${officer.name}</option>
+                `
+            })
+        }
+    </select>
     `
 }

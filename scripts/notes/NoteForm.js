@@ -1,31 +1,34 @@
+//Module Goals
+    //Render HTML for form
+    //Once user clicks form's save button, save entered object
+    
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 import { saveNote } from "./NoteProvider.js"
 
 const eventHub = document.querySelector(".container__criminals")
 const contentTarget = document.querySelector(".note__form")
 
+//When user clicks note save button, save entered note
 eventHub.addEventListener("click", e => {
     if (e.target.id === "note-save") {
-        console.log("NOTE SAVED BUTTON PRESSED");
-
         const noteTitle = document.querySelector("#note-text-title");
         const noteText = document.querySelector("#note-text-body");
         const noteSuspect = document.querySelector("#noteForm--suspect");
 
-        //Create what the database is expecting.
+        //Create object to store in JSON database
         const newNote = {
             date: Date.now(),
             suspectId: parseInt(noteSuspect.value),
             textTitle: noteTitle.value,
             textBody: noteText.value
         }
-
+        //Invokes saveNote function in CriminalProvider.js
         saveNote(newNote)
     }
 })
 
+//Adds the form to DOM with latest list of suspects (criminals)
 export const NoteForm = () => {
-    // To ensure we have the array to populate the suspect dropdown, get criminals
     getCriminals()
     .then(() => {
         const criminalArray = useCriminals();
@@ -33,7 +36,7 @@ export const NoteForm = () => {
     })
 }
 
-//WE DON"T HAVE TO PUT A DATE FIELD. The save button handles that.
+//Prepares HTML to render to DOM
 const renderNoteForm = (criminalArr) => {
     contentTarget.innerHTML += `
         <header class="form__header">

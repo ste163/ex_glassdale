@@ -1,8 +1,8 @@
 // Module goal: render all stored notes
+
 import { getNotes, useNotes } from "./NoteProvider.js"
 import { NoteHTML } from "./NoteHTML.js"
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
-
 
 const eventHub = document.querySelector(".container__main");
 
@@ -23,7 +23,7 @@ export const ListNotes = () => {
 }
 
 //Take Notes array and Suspect (criminal) array, match the suspect ID to one stored
-    //in Notes array, then store the matched supsect object as a new property in the note.
+    //in Notes array, then store the matched suspect object as a new property in the note.
 const renderNotes = (notesArr, suspectsArr) => {
     const domElement = document.querySelector(".note__container--cards")
 

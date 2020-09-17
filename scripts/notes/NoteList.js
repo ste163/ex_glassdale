@@ -1,25 +1,38 @@
-// Will eventually show all the notes that we have created.
+// Module goal: render all stored notes
+
 import { getNotes, useNotes } from "./NoteProvider.js"
 import { NoteHTML } from "./NoteHTML.js"
-
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 
 const eventHub = document.querySelector(".container__main");
 
-//We will be listening for the noteStateChanged event. Once that
-//once that happens, we update our notes.
+//Listen for when the noteState changes then re-render notes
 eventHub.addEventListener("noteStateChanged", () => {
-    const notesArray = useNotes();
-    renderNotes(notesArray);
+    renderNotes(useNotes(), useCriminals());
 })
 
+//Initially getting all saved notes and displaying them on page.
 export const ListNotes = () => {
     getNotes()
-    .then(useNotes)
-    .then(renderNotes)
+    .then(getCriminals)
+    .then(() => {
+        const notes = useNotes();
+        const suspects = useCriminals()
+        renderNotes(notes, suspects);
+    })
 }
 
-const renderNotes = (notesArr) => {
+//Take Notes array and Suspect (criminal) array, match the suspect ID to one stored
+    //in Notes array, then store the matched suspect object as a new property in the note.
+const renderNotes = (notesArr, suspectsArr) => {
     const domElement = document.querySelector(".note__container--cards")
-    let HTMLArray = notesArr.map(note => NoteHTML(note));
+    let HTMLArray = notesArr.map(note => {
+        //Declaring a new property on our Note that will be the corresponding Suspect's Object
+        note.suspectObj = suspectsArr.find(suspect => {
+            //Checks if Suspect's ID matches Note's Suspect ID
+            return suspect.id === parseInt(note.suspectId)
+        })
+        return NoteHTML(note)
+    });
     domElement.innerHTML = HTMLArray.join("");
 }

@@ -1,20 +1,22 @@
-// hold our array of notes
-// have a useNotes that returns a copy of array (slice)
-
-// have a getNotes from the database. Also be able to add a note to the database.
+//Module Goals:
+    //Fetch saved notes from Database
+    //Post new notes to Database
+    //Use a copy of notes without affecting database
 
 const eventHub = document.querySelector(".container__main");
 
 let notesArray = [];
 
+//Lets the eventHub know user has changed a note.
 const dispatchNoteStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged");
-    console.log("NOTE STATE CHANGED")
     eventHub.dispatchEvent(noteStateChangedEvent);
 }
 
+//Returns a copy of fetched notes
 export const useNotes = () => notesArray.slice();
 
+//Fetches notes from database then converts it to JSON
 export const getNotes = () => {
     return fetch("http://localhost:8088/notes")
     .then(response => response.json())
@@ -23,6 +25,7 @@ export const getNotes = () => {
     })
 }
 
+//Posts a new note to database then informs eventHub of change
 export const saveNote = noteObj => {
     return fetch("http://localhost:8088/notes", {
         method: "POST",

@@ -27,9 +27,9 @@ export const ListNotes = () => {
 const renderNotes = (notesArr, suspectsArr) => {
     const domElement = document.querySelector(".note__container--cards")
     let HTMLArray = notesArr.map(note => {
-        //we are declaring a new property on the note object that is suspectObj.
+        //Declaring a new property on our Note that will be the corresponding Suspect's Object
         note.suspectObj = suspectsArr.find(suspect => {
-            //change current suspect to suspectID
+            //Checks if Suspect's ID matches Note's Suspect ID
             return suspect.id === parseInt(note.suspectId)
         })
         return NoteHTML(note)

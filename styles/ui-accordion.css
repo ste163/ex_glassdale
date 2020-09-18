@@ -1,0 +1,25 @@
+.ui-accordion__btn {
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.ui-accordion__active, .ui-accordion__btn:hover {
+    background-color: var(--activeAccordionBtn);
+    color: var(--textColor)
+}
+
+.ui-accordion__btn:after {
+    float: left;
+    content: "\002B";
+}
+
+.ui-accordion__active:after {
+    content: "\2212";
+}
+
+.ui-accordion__section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    margin: 0 20px;
+}

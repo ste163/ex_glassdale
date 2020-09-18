@@ -58,7 +58,7 @@ const renderNoteForm = (criminalArr) => {
                     }).join("")
                     }
             </select>
-            <button id="note-save">Save Note</button>
+            <button type="button" id="note-save">Save Note</button>
         </form>
     `
 }

@@ -1,6 +1,7 @@
 //Module Goals:
     //Fetch saved notes from Database
     //Post new notes to Database
+    //Delete selected note
     //Use a copy of notes without affecting database
 
 const eventHub = document.querySelector(".container__main");
@@ -41,4 +42,13 @@ export const saveNote = noteObj => {
     // in the correct order.
     .then(getNotes)
     .then(dispatchNoteStateChangeEvent)
+}
+
+//Delete note from database
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchNoteStateChangeEvent)
 }

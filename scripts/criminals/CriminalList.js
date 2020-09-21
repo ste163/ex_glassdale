@@ -6,27 +6,33 @@ import { getCriminalFacilities, useCriminalFacilities } from "../facilities/Crim
 const eventHub = document.querySelector(".container__main");
 
 
-eventHub.addEventListener("crimeChosen", e => {
-    if ("chosenCrime" in e.detail) {
-        const criminalArray = useCriminals();
-        const filteredArray = criminalArray.filter(each => {
-            return each.conviction === e.detail.chosenCrime;
-        })
+// eventHub.addEventListener("crimeChosen", e => {
+//     if ("chosenCrime" in e.detail) {
+//         const criminalArray = useCriminals();
+//         const facilitiesArr = useFacilities();
+//         const crimFacArr = useCriminalFacilities();
+
+//         const filteredArray = criminalArray.filter(each => {
+//             return each.conviction === e.detail.chosenCrime;
+//         })
         
-        renderCriminals(filteredArray);
-    }
-})
+//         renderCriminals(filteredArray, facilitiesArr, crimFacArr);
+//     }
+// })
 
-eventHub.addEventListener("officerSelected", e => {
-    if ("officer" in e.detail) {
-        const criminalArray = useCriminals();
-        const filteredArray = criminalArray.filter(each => {
-            return each.arrestingOfficer === e.detail.officer
-        })
+// eventHub.addEventListener("officerSelected", e => {
+//     if ("officer" in e.detail) {
+//         const criminalArray = useCriminals();
+//         const facilitiesArr = useFacilities();
+//         const crimFacArr = useCriminalFacilities();
 
-        renderCriminals(filteredArray);
-    }
-})
+//         const filteredArray = criminalArray.filter(each => {
+//             return each.arrestingOfficer === e.detail.officer
+//         })
+
+//         renderCriminals(filteredArray, facilitiesArr, crimFacArr);
+//     }
+// })
 
 // Get all the criminal data before rendering
 export const ListCriminals = () => {
@@ -57,6 +63,7 @@ const renderCriminals = (criminalsArr, facilitiesArr, crimFacArr) => {
                 const matchingFacilityIds = facilitiesArr.find(facility => facility.id === crimFac.id)
                 return matchingFacilityIds;
             })
+            console.log(facilities)
             return CriminalHTML(criminalObj, facilities)
         }
     ).join("")

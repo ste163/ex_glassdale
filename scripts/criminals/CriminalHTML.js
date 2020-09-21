@@ -17,7 +17,7 @@ eventHub.addEventListener("click", e => {
     }
 })
 
-export const CriminalHTML = (criminalObj) => {
+export const CriminalHTML = (criminalObj, facilities) => {
     const startDate = new Date(criminalObj.incarceration.start).toLocaleDateString('en-US');
     const endDate = new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')
     return `
@@ -27,6 +27,12 @@ export const CriminalHTML = (criminalObj) => {
         <p>Crime: ${criminalObj.conviction} </p>
         <p>Term start: ${startDate}</p>
         <p>Term end: ${endDate}</p>
+        <div class="criminal__facilities">
+            <h6>Facilities</h6>
+            <ul>
+                ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+            </ul>
+        </div>
         <button class="associates__btn" id="associates--${criminalObj.id}">Associate Alibis</button>
         ${AlibiDialogueHTML(criminalObj.id)}
     </section>
